@@ -5,6 +5,8 @@ pipeline{
     tools {
         maven '3.6.3'
     }
+    
+    
    
     stages {
         
@@ -23,7 +25,7 @@ pipeline{
             steps{
                 
                 script{
-                    
+                  
                     sh 'mvn -e test'
                 }
             }
@@ -43,7 +45,7 @@ pipeline{
             steps{
                 
                 script{
-                    
+                     bat ' mvn -f /demo-counter-app/pom.xml clean install'
                     sh 'mvn clean install'
                 }
             }
