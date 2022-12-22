@@ -77,6 +77,7 @@ pipeline{
                     
                     script{
                         
+                        def readpomVersion =readMavenPom file: 'pom.xml'
                         nexusArtifactUploader artifacts: 
                             [
                                 [
