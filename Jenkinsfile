@@ -17,7 +17,7 @@ pipeline{
                 }
             }
         }
-        stage('UNIT testing'){
+        stage('Unit test'){
             
             steps{
                 
@@ -27,7 +27,7 @@ pipeline{
                 }
             }
         }
-        stage('Integration testing'){
+        stage('Integration test'){
             
             steps{
                 
@@ -47,7 +47,7 @@ pipeline{
                 }
             }
         }
-        stage('Static code analysis'){
+        stage('SonarQube analysis'){
             
             steps{
                 
@@ -61,16 +61,7 @@ pipeline{
                     
                 }
             }
-            stage('Quality Gate Status'){
-                
-                steps{
-                    
-                    script{
-                        
-                        waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api'
-                    }
-                }
-            }
+           
         }
         
 }
