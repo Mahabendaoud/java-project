@@ -25,7 +25,7 @@ pipeline{
             steps{
                 
                 script{
-                  
+                    bat ' mvn -f /demo-counter-app/pom.xml clean install'
                     sh 'mvn -e test'
                 }
             }
@@ -35,7 +35,7 @@ pipeline{
             steps{
                 
                 script{
-                    
+                    bat ' mvn -f /demo-counter-app/pom.xml clean install'
                     sh 'mvn verify -DskipUnitTests'
                 }
             }
@@ -45,7 +45,7 @@ pipeline{
             steps{
                 
                 script{
-                     bat ' mvn -f /demo-counter-app/pom.xml clean install'
+                    bat ' mvn -f /demo-counter-app/pom.xml clean install'
                     sh 'mvn clean install'
                 }
             }
