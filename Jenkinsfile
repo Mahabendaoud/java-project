@@ -25,8 +25,7 @@ pipeline{
             steps{
                 
                 script{
-                    def pomfilepath= <pom.xml /demo-counter-app/prom.xml/ >
-                    
+                   
                     sh 'mvn clean install'
                 }
             }
