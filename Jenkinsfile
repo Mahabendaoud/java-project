@@ -25,8 +25,11 @@ pipeline{
             steps{
                 
                 script{
-                    mvn -f /demo-counter-app/pom.xml
-                    sh 'mvn clean install'
+                    sh '''
+                           cd /demo-counter-app/
+                           mvn clean install
+                       '''
+                   
                 }
             }
         }
