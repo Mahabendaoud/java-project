@@ -24,7 +24,7 @@ pipeline{
                 
                 script{
                     
-                    sh 'mvn test'
+                    sh 'mvn -e test'
                 }
             }
         }
