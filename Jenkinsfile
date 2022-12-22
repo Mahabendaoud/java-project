@@ -26,7 +26,7 @@ pipeline{
                 
                 script{
                     sh '''
-                           cd java-project/pom.xml
+                           cd master/java-project/pom.xml
                            mvn clean install
                        '''
                    
