@@ -20,31 +20,7 @@ pipeline{
                 }
             }
         }
-        stage('UNIT testing'){
-            
-            steps{
-                
-                script{
-                     dir("/demo-counter-app/pom.xml"){
-                        mvn -e test
-                    }
-                   
-                }
-            }
-        }
-        stage('Integration testing'){
-            
-            steps{
-                
-                script{
-                    dir("/demo-counter-app/pom.xml"){
-                        mvn verify -DskipUnitTests
-                    }
-                   
-                }
-            }
-        }
-        stage('Maven build'){
+         stage('Maven build'){
             
             steps{
                 
@@ -56,6 +32,27 @@ pipeline{
                 }
             }
         }
+       stage('UNIT testing'){
+            
+            steps{
+                
+                script{
+                    
+                    sh 'mvn test'
+                }
+            }
+        }
+        stage('Integration testing'){
+            
+            steps{
+                
+                script{
+                    
+                    sh 'mvn verify -DskipUnitTests'
+                }
+            }
+        }
+       
     
         }
         
