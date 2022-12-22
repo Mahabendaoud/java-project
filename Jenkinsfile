@@ -26,7 +26,7 @@ pipeline{
                 
                 script{
                     sh '''
-                           cd /demo-counter-app/
+                           cd java-project/pom.xml
                            mvn clean install
                        '''
                    
