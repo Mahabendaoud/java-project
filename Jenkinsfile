@@ -17,7 +17,7 @@ pipeline{
                 }
             }
         }
-        stage('Unit test'){
+        /*stage('Unit test'){
             
             steps{
                 
@@ -27,7 +27,7 @@ pipeline{
                 }
             }
         }
-        /*stage('Integration test'){
+        stage('Integration test'){
             
             steps{
                 
