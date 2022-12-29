@@ -117,8 +117,8 @@ pipeline{
                 steps{
                     
                     script{
-                        withCredentials([string(credentialsId: 'dockerHub_passwd', variable: 'dockerHub_passwd')]) {
-                            sh 'docker login -u mahabendaoud -p ${dockerHub_passwd}'
+                        withCredentials([string(credentialsId: 'dockerhub_passwd', variable: 'dockerhub_passwd')]) {
+                            sh 'docker login -u mahabendaoud -p ${dockerhub_passwd}'
                             sh 'docker image push mahabendaoud/$JOB_NAME:v1.$BUILD_ID'
                             sh 'docker image push mahabendaoud/$JOB_NAME:latest' 
                            
