@@ -17,7 +17,7 @@ pipeline{
                 }
             }
         }
-        /*stage('Unit test'){
+        stage('Unit test'){
             
             steps{
                 
@@ -96,7 +96,7 @@ pipeline{
                             version: "${pom.version}"
                     }
                 }
-            }*/
+            }
         
         stage('Docker Image Build'){
                 
