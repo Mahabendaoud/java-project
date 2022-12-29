@@ -112,7 +112,7 @@ pipeline{
                     }
                 }
             }
-         stage('Docker Image Build'){
+         stage('push image to dockerhub'){
                 
                 steps{
                     
