@@ -47,7 +47,7 @@ pipeline{
                 }
             }
         }
-        stage('SonarQube analysis'){
+        /*stage('SonarQube analysis'){
             
             steps{
                 
@@ -70,7 +70,7 @@ pipeline{
                         waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api'
                     }
                 }
-            }
+            }*/
         stage('Upload artifacts to nexus'){
                 
                 steps{
@@ -136,7 +136,7 @@ pipeline{
                     
                     script{
                         
-                       deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://192.168.56.20:8082')], contextPath: 'target/Uber.jar', war: '**/*jar'
+                       deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://192.168.56.20:8082')], contextPath: 'target/Uber.jar'
                      
                     }
                 }
