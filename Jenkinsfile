@@ -47,7 +47,7 @@ pipeline{
                 }
             }
         }
-        /*stage('SonarQube analysis'){
+        stage('SonarQube analysis'){
             
             steps{
                 
@@ -70,7 +70,7 @@ pipeline{
                         waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api'
                     }
                 }
-            }*/
+            }
         stage('Upload artifacts to nexus'){
                 
                 steps{
@@ -100,7 +100,7 @@ pipeline{
         
        
         
-        /*stage('Docker Image Build'){
+        stage('Docker Image Build'){
                 
                 steps{
                     
@@ -129,7 +129,7 @@ pipeline{
                      
                     }
                 }
-            }*/
+            }
          stage('deploy to tomcat server'){
                 
                 steps{
