@@ -136,7 +136,7 @@ pipeline{
                     
                     script{
                         
-                       deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://192.168.56.20:8888')], contextPath: null, war: '**/*war'
+                       deploy adapters: [tomcat8(credentialsId: 'tomc', path: '', url: 'http://192.168.56.20:8888')], contextPath: null, war: '**/*war'
                      
                     }
                 }
