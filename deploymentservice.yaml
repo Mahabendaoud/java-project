@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment # Kubernetes resource kind we are creating
 metadata:
-  name:mydeployment
+  name: mydeployment
 spec:
   selector:
     matchLabels:
