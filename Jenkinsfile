@@ -136,7 +136,7 @@ pipeline{
                     
                     script{
                         
-                       deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://192.168.56.20:8082')], contextPath: 'target/Uber.jar'
+                       deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://192.168.56.20:8082')], contextPath: null, war: '**/*war'
                      
                     }
                 }
