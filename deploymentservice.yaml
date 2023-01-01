@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment # Kubernetes resource kind we are creating
 metadata:
-  name: default
+  name:mydeployment
 spec:
   selector:
     matchLabels:
-      app: springboot
+      app: myspringbootapp
   replicas: 2 # Number of replicas that will be created for this deployment
   template:
     metadata:
       labels:
-        app: springboot
+        app: myspringbootapp
     spec:
       containers:
-        - name: springboot
-          image: mahabendaoud/$JOB_NAME:latest # Image that will be used to containers in the cluster
-          imagePullPolicy: IfNotPresent
+        - name: myspringbootapp
+          image: mahabendaoud/cicd:latest # Image that will be used to containers in the cluster
+          imagePullPolicy: Always
           ports:
-            - containerPort: 8080 # The port that the container is running on in the cluster
+            - containerPort: 9099 # The port that the container is running on in the cluster
 
 
 ---
@@ -25,12 +25,12 @@ spec:
 apiVersion: v1 # Kubernetes API version
 kind: Service # Kubernetes resource kind we are creating
 metadata: # Metadata of the resource kind we are creating
-  name: default
+  name: myservice
 spec:
   selector:
-    app: springboot
+    app: myspringbootapp
   ports:
-    - protocol: "TCP"
-      port: 8080 # The port that the service is running on in the cluster
-      targetPort: 8080 # The port exposed by the service
-  type: NodePort # type of the service.
+    - nodePort: 30036
+      port: 80 # The port that the service is running on in the cluster
+      targetPort: 9099 # The port exposed by the service
+  type: LoadBalancer # type of the service.
