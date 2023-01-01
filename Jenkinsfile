@@ -98,6 +98,8 @@ pipeline{
                 }
             }
         
+       
+        
         stage('Docker Image Build'){
                 
                 steps{
@@ -124,6 +126,17 @@ pipeline{
                            
                         }
                         
+                     
+                    }
+                }
+            }
+         stage('deploy to tomcat server'){
+                
+                steps{
+                    
+                    script{
+                        
+                       deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://192.168.56.20:8082/')], contextPath: null, war: '**/*jar'
                      
                     }
                 }
