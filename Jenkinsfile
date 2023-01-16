@@ -72,7 +72,16 @@ pipeline{
                 }
             }
         
+        stage('Quality Gate Status'){
+                
+                steps{
+                    
+                    script{
+                        cucumber buildStatus: 'null', customCssFiles: '', customJsFiles: '', failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/*.json', pendingStepsNumber: -1, reportTitle: 'test cucumber', skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
         
+         }
+                }
+            }
         
         
         
