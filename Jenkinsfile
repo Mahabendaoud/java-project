@@ -72,7 +72,7 @@ pipeline{
                 }
             }
         
-        stage('Quality Gate Status'){
+        stage('cucumber test'){
                 
                 steps{
                     
