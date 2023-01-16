@@ -71,6 +71,40 @@ pipeline{
                     }
                 }
             }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /*
         stage('Upload artifacts to nexus'){
                 
                 steps{
@@ -136,11 +170,11 @@ pipeline{
                     
                     script{
                         
-                       deploy adapters: [tomcat8(credentialsId: 'tomc', path: '', url: 'http://192.168.56.20:8888')], contextPath: null, war: '**/*war'
+                       deploy adapters: [tomcat8(credentialsId: 'tomc', path: '', url: 'http://192.168.56.20:8888')], contextPath: null, war: '***war'
                      
                     }
                 }
-            }
+            } 
          stage('deploy to k8s'){
                 
                 steps{
@@ -148,11 +182,11 @@ pipeline{
                     script{
                         kubernetesDeploy configs: 'deploymentservice.yaml', kubeConfig: [path: ''], kubeconfigId: 'k8sconfigpwd', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
                         
-                       /* kubernetesDeploy (configs: 'deploymentservice.yaml', kubeconfigId: 'k8sconfigpwd')*/
+                        kubernetesDeploy (configs: 'deploymentservice.yaml', kubeconfigId: 'k8sconfigpwd')
                      
                     }
                 }
-            }
+            }*/
        
            
         }
